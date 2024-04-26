@@ -92,6 +92,13 @@ resource "aws_s3_bucket" "state" {
   }
   tags = var.common_tags
 }
+resource "aws_s3_bucket_versioning" "versioning_example" {
+  depends_on = [aws_s3_bucket.state]
+  bucket     = aws_s3_bucket.state.id
+  versioning_configuration {
+    status = "Enabled"
+  }
+}
 
 resource "aws_s3_bucket" "backup" {
   provider = "aws.backup"
@@ -101,6 +108,13 @@ resource "aws_s3_bucket" "backup" {
     enabled = true
   }
   tags = var.common_tags
+}
+resource "aws_s3_bucket_versioning" "versioning_example1" {
+  depends_on = [aws_s3_bucket.backup]
+  bucket     = aws_s3_bucket.backup.id
+  versioning_configuration {
+    status = "Enabled"
+  }
 }
 
 resource "aws_dynamodb_table" "tf-state-lock" {

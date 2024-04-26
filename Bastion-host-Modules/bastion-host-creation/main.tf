@@ -12,9 +12,9 @@ resource "aws_instance" "bastion_host" {
 
 terraform {
   backend "s3" {
-    bucket         = "2108-devops-bfa-final-tf-state"
-    key            = "aws-terraform/vpc/terraform.tfstate"
-    region         = "us-east-1"
-    dynamodb_table = "2108-devops-bfa-final-tf-state-lock"
+    bucket         = "2923-devops-bfa-final-tf-state"
+    key            = "aws-terraform/bastion-host/terraform.tfstate"
+    region         = "us-east-2"
+    dynamodb_table = "2923-devops-bfa-final-tf-state-lock"
   }
 }

@@ -1,3 +1,9 @@
+provider "aws" {
+  region = var.aws_region
+}
+
+# terraform blocks
+
 terraform {
   required_version = ">= 1.0.0"
   required_providers {
@@ -6,14 +12,4 @@ terraform {
       version = "~> 4.0"
     }
   }
-}
-
-provider "aws" {
-  alias  = "state"
-  region = var.aws_region_main
-}
-
-provider "aws" {
-  alias  = "backup"
-  region = var.aws_region_backup
 }

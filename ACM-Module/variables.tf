@@ -1,19 +1,24 @@
-variable "aws_region_main" {
+variable "aws_region" {
   type    = string
   default = "us-east-2"
 }
 
-variable "aws_region_backup" {
+variable "domain_name" {
   type    = string
-  default = "us-east-2"
+  default = "bfadevops.com"
 }
 
-variable "common_tags" {
+variable "subject_alternative_names" {
+  type    = string
+  default = "bfadevops.com"
+}
+
+variable "tags" {
   type = map(any)
   default = {
     "id"             = "2923"
     "owner"          = "S5edouard"
-    "teams"          = "devops-bfa"
+    "teams"          = "usa-devops"
     "environment"    = "devops-bfa"
     "project"        = "final"
     "create_by"      = "Terraform"

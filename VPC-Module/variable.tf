@@ -1,13 +1,14 @@
 variable "aws_region" {
   type = string
+  default = "us-east-2"
 }
 
 variable "common_tags" {
   type = map(any)
   default = {
-    "id"             = "2108"
-    "owner"          = "S5KISITO"
-    "teams"          = "usa-devops"
+    "id"             = "2923"
+    "owner"          = "S5edouard"
+    "teams"          = "devops-BFA"
     "environment"    = "devops-bfa"
     "project"        = "final"
     "create_by"      = "Terraform"
@@ -51,9 +52,9 @@ variable "public-subnet-cidr" {
 variable "aws_availability_zones" {
   type = list(any)
   default = [
-    "us-east-1a",
-    "us-east-1b",
-    "us-east-1c",
+    "us-east-2a",
+    "us-east-2b",
+    "us-east-2c",
   ]
 }
 
