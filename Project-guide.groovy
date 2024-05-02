@@ -172,10 +172,29 @@ in this file.
  Database (module)
  ------------------
  https://github.com/devopstia/s4/tree/master/terroform/session04/modules/databases/postgres
+ https://www.youtube.com/watch?v=qi5dnEM9mGY (secret-manager secret& kms)
+
+
  The Database should be created within the private subnets
  Create final snapshot should be enabled to recover the database in case someone delete the DB
  The DB username and password should be store on AWS secret manager
  The DB should be accessible only through a bastion 
+
+Steps for Creating a Database using Aws Secret-Manager to store Secret: 
+
+1. Beside your Database module (in Main.Tf file)
+
+2.Create a Secret-Manager.Tf(file) as follow:
+
+- Resource to create a Secret in Secret-Manager called aws_secretsmanager_secret
+- Resource to create the Secret-Password [(either random passwd,or configure )]
+- Resource to create the Secret-Version[(secretID, secretID string)]
+- Resource to create Aws Kms(KEY MANAGEMENT SERVICE) to manage the secret.
+
+P.S: See Module in the directory to line up files 
+(data.tf, main.tf, providers.tf,secret-manager.tf,tfvars.tf, variables.tf)
+
+
 
 EKS Control Plane
 ------------------
