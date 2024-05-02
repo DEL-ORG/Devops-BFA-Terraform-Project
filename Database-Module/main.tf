@@ -1,3 +1,5 @@
+
+
 resource "aws_db_instance" "postgres" {
   identifier            = format("%s-%s-olivia-db", var.common_tags["environment"], var.common_tags["project"])
   engine                = lookup(var.postgres, "engine")
@@ -9,10 +11,10 @@ resource "aws_db_instance" "postgres" {
   db_name               = lookup(var.postgres, "db_name")
   # username                    = data.aws_secretsmanager_secret_version.rds_username.secret_string
   username                    = "postgres"
-  password                    = data.aws_secretsmanager_secret_version.rds_password.secret_string
+  password                    = "data.aws_secretsmanager_secret_version.secret.secret_string"
   final_snapshot_identifier   = format("%s%soliviaSnapshot", var.common_tags["project"], var.common_tags["environment"])
   skip_final_snapshot         = lookup(var.postgres, "skip_final_snapshot")
-  parameter_group_name        = aws_db_parameter_group.postgres.name
+  parameter_group_name        = "default.postgres16" #aws_db_parameter_group.postgres.name
   backup_retention_period     = lookup(var.postgres, "backup_retention_period")
   deletion_protection         = lookup(var.postgres, "deletion_protection")
   maintenance_window          = lookup(var.postgres, "maintenance_window")
@@ -55,7 +57,7 @@ resource "aws_security_group_rule" "postgres_egress" {
 }
 
 resource "aws_db_subnet_group" "postgres" {
-  name       = format("%s-%s-subnet-group", var.common_tags["environment"], var.common_tags["project"])
+  name       = format("%s-%s-subnet-group", var.common_tags["teams"], var.common_tags["project"])
   subnet_ids = values(var.private_subnets)
 }
 
@@ -63,14 +65,14 @@ resource "aws_db_parameter_group" "postgres" {
   family = lookup(var.postgres, "family")
 }
 
-resource "aws_route53_record" "example" {
-  depends_on = [aws_db_instance.postgres]
-  zone_id    = lookup(var.postgres, "zone_id")
-  name       = lookup(var.postgres, "aws_route53_record")
-  type       = "CNAME"
-  ttl        = "300"
-  records    = [local.endpoint_without_port]
-}
+# resource "aws_route53_record" "example" {
+#   depends_on = [aws_db_instance.postgres]
+#   zone_id    = lookup(var.postgres, "zone_id")
+#   name       = lookup(var.postgres, "aws_route53_record")
+#   type       = "CNAME"
+#   ttl        = "300"
+#   records    = [local.endpoint_without_port]
+# }
 
 locals {
   rds_endpoint          = aws_db_instance.postgres.endpoint
