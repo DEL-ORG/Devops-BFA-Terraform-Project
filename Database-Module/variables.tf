@@ -3,8 +3,8 @@ variable "common_tags" {
   default = {
     "id"             = "2560"
     "owner"          = "S5edouard"
-    "teams"          = "Devops-BFA"
-    "environment"    = "dev"
+    "teams"          = "bfadevops"
+    "environment"    = "del"
     "project"        = "del"
     "create_by"      = "Terraform"
     "cloud_provider" = "aws"
