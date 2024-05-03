@@ -1,4 +1,4 @@
-S3 Backend (module)
+S3 Backend (module) (1)
 --------------------
 
  https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/s3-backend-with-replication
@@ -55,7 +55,7 @@ Configure the table settings, such as read and write capacity.
 Review and create the table.
 
 
- VPC (module)
+ VPC (module) (2)
  --------------
 
  3 Public subnets in 3 different AZ
@@ -73,7 +73,7 @@ VPC CREATION GUIDANCE ON THE CONSOLE & USING TERRAFORM (complete-course-del)
  
  
 
-Bastion Host (module)
+Bastion Host (module) (3)
 ---------------------
 
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/bastion-host
@@ -144,7 +144,7 @@ reproducible machine images, streamlining the deployment process and improving i
 management.
 
 
- ACM
+ ACM (4)
  ----- 
  https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/acm
  Purchase a domain name on route 53 (Console)
@@ -196,30 +196,30 @@ P.S: See Module in the directory to line up files
 
 
 
-EKS Control Plane
+EKS Control Plane(6)
 ------------------
 
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/eks-control-plane
 It should be created in at least 2 public subnets
 
-EKS Node Group
+EKS Node Group(7)
 --------------
 
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/eks-node-group
 It should be created in at least 2 private subnets
 Node should be labeled
-Propore tag should be use for cluster autoscaler
-Remote access should be enabled
+Proper tag should be use for cluster autoscaler (deploy autoscaler)
+Remote access should be enabled (ssh connection via bastion host.)
 
-EKS Namespace
+EKS Namespace(5)
 --------------
 
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/eks-namespaces
-Use loops the create namespace
-Make sure namespace will not be deleted and recreate when we add or remove namespace
+Use loops to create namespace
+Make sure namespace will not be deleted and recreated when we add or remove namespace.
 
 
-EKS Cluster Autoscaler
+EKS Cluster Autoscaler(10)
 ----------------------
 
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/cluster-auto-scaler
@@ -228,18 +228,23 @@ Make sure the role have the propore permission to create EC2 instances
 Make sure the cluster should scale up with the delay of 2 minutes only
 Make sure the cluster should scale down with the delay of 2 minutes only
 
-AWS Loadbalance Controller
+AWS Loadbalance Controller (8)
 --------------------------
 
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/aws-load-balancer-controller
-It should be created in the kube-system namespace
+It should be created in the kube-system namespace 
 Make sure the role have the propore permission to create an ALB
-The ALB should be created in the same network with the cluste
+The ALB should be created in the same network with the Cluster
 
-External DNS
+External DNS(9)
 --------------
 
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/external-dns
 It should be created in the namespace call external-dns
 It should have the necessary permissions to create a records set in Route 53
 It should delete the record set immediately when the ingress is deleted in the cluster
+
+
+
+Namespace, Control Plane, Node-Group,External-Dns, Loadbalancer Controller,
+ Eks ClusterAuto-Scaler.
