@@ -196,13 +196,13 @@ P.S: See Module in the directory to line up files
 
 
 
-EKS Control Plane(6)
+EKS Control Plane(5)
 ------------------
 
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/eks-control-plane
 It should be created in at least 2 public subnets
 
-EKS Node Group(7)
+EKS Node Group(6)
 --------------
 
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/eks-node-group
@@ -211,7 +211,7 @@ Node should be labeled
 Proper tag should be use for cluster autoscaler (deploy autoscaler)
 Remote access should be enabled (ssh connection via bastion host.)
 
-EKS Namespace(5)
+EKS Namespace(7)
 --------------
 
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/eks-namespaces
@@ -245,6 +245,3 @@ It should have the necessary permissions to create a records set in Route 53
 It should delete the record set immediately when the ingress is deleted in the cluster
 
 
-
-Namespace, Control Plane, Node-Group,External-Dns, Loadbalancer Controller,
- Eks ClusterAuto-Scaler.
