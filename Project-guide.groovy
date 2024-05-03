@@ -198,7 +198,9 @@ EKS Namespace
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/eks-namespaces
 Use loops the create namespace
 Make sure namespace will not be deleted and recreate when we add or remove namespace
+
 EKS Cluster Autoscaler
+----------------------
 
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/cluster-auto-scaler
 It should be created in the cluster-auto-scaler namespace
