@@ -202,6 +202,11 @@ EKS Control Plane(5)
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/eks-control-plane
 It should be created in at least 2 public subnets
 
+Steps:
+
+1. Retrieve our Tls(Transport Layer Security) which is in our Acm(Certificate Manager):
+
+
 EKS Node Group(6)
 --------------
 
