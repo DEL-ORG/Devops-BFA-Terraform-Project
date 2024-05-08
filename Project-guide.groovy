@@ -204,7 +204,12 @@ It should be created in at least 2 public subnets
 
 Steps:
 
-1. Retrieve our Tls(Transport Layer Security) which is in our Acm(Certificate Manager):
+1. Retrieve our Tls(Transport Layer Security) which is in our Acm(Certificate Manager)
+   Refer to [[Iam-Oidc-Connect-Provider.tf]]
+2. Make sure that the variables endpoint-private-access and endpoint-public-access
+   are set respectively to false and true.
+3. Ensure that your eks-control-plane version is up to date and compatible to your 
+    worker node version.
 
 
 EKS Node Group(6)
