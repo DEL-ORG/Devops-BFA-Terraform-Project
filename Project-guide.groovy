@@ -1,6 +1,5 @@
 S3 Backend (module) (1)
 --------------------
-
  https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/s3-backend-with-replication
 
  Create a s3bucket to store the state file (in terms of module)
@@ -57,7 +56,6 @@ Review and create the table.
 
  VPC (module) (2)
  --------------
-
  3 Public subnets in 3 different AZ
  3 Private subnets in 3 different AZ
  3 NAT in the public subnets for high availability
@@ -75,7 +73,6 @@ VPC CREATION GUIDANCE ON THE CONSOLE & USING TERRAFORM (complete-course-del)
 
 Bastion Host (module) (3)
 ---------------------
-
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/bastion-host
 
 The bastion host should have all packages installed:
@@ -198,7 +195,6 @@ P.S: See Module in the directory to line up files
 
 EKS Control Plane(5)
 ------------------
-
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/eks-control-plane
 It should be created in at least 2 public subnets
 
@@ -214,7 +210,6 @@ Steps:
 
 EKS Node Group(6)
 --------------
-
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/eks-node-group
 It should be created in at least 2 private subnets
 Node should be labeled
@@ -223,12 +218,13 @@ Remote access should be enabled (ssh connection via bastion host.)
 
 EKS Namespace(7)
 --------------
-
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/eks-namespaces
 Use loops the create namespace
 Make sure namespace will not be deleted and recreate when we add or remove namespace
-EKS Cluster Autoscaler
 
+
+EKS Cluster Autoscaler
+----------------------
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/cluster-auto-scaler
 It should be created in the cluster-auto-scaler namespace
 Make sure the role have the propore permission to create EC2 instances
@@ -237,7 +233,6 @@ Make sure the cluster should scale down with the delay of 2 minutes only
 
 AWS Loadbalance Controller (8)
 --------------------------
-
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/aws-load-balancer-controller
 It should be created in the kube-system namespace 
 Make sure the role have the propore permission to create an ALB
@@ -245,7 +240,6 @@ The ALB should be created in the same network with the Cluster
 
 External DNS(9)
 --------------
-
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/external-dns
 It should be created in the namespace call external-dns
 It should have the necessary permissions to create a records set in Route 53
