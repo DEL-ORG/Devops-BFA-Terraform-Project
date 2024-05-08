@@ -14,6 +14,7 @@ variable "tags" {
 
 variable "region" {
   type = string
+  default = "us-east-2"
 }
 
 variable "cluster_name" {
@@ -22,21 +23,24 @@ variable "cluster_name" {
 
 variable "eks_version" {
   type = string
+  default = "1.29"
 }
 
 variable "endpoint_private_access" {
   type = bool
+  default = false
 }
 
 variable "endpoint_public_access" {
   type = bool
+  default = true
 }
 
 variable "public_subnets" {
   type = map(string)
   default = {
-    us-east-1a = "subnet-096d45c28d9fb4c14"
-    us-east-1b = "subnet-05f285a35173783b0"
-    us-east-1c = "subnet-0fe3255479ad7c3a4"
+    us-east-1a = "subnet-01ca715268155b78e"
+    us-east-1b = "subnet-0224a65c32f4a12b5"
+    us-east-1c = "subnet-02b0aa8c03ca80d14"
   }
 }
