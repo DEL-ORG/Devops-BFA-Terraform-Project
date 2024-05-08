@@ -1,4 +1,4 @@
-S3 Backend (module)
+S3 Backend (module) (1)
 --------------------
 
  https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/s3-backend-with-replication
@@ -55,7 +55,7 @@ Configure the table settings, such as read and write capacity.
 Review and create the table.
 
 
- VPC (module)
+ VPC (module) (2)
  --------------
 
  3 Public subnets in 3 different AZ
@@ -73,7 +73,7 @@ VPC CREATION GUIDANCE ON THE CONSOLE & USING TERRAFORM (complete-course-del)
  
  
 
-Bastion Host (module)
+Bastion Host (module) (3)
 ---------------------
 
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/bastion-host
@@ -144,7 +144,7 @@ reproducible machine images, streamlining the deployment process and improving i
 management.
 
 
- ACM
+ ACM (4)
  ----- 
  https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/acm
  Purchase a domain name on route 53 (Console)
@@ -172,35 +172,57 @@ in this file.
  Database (module)
  ------------------
  https://github.com/devopstia/s4/tree/master/terroform/session04/modules/databases/postgres
+ https://www.youtube.com/watch?v=qi5dnEM9mGY (secret-manager secret& kms)
+
+
  The Database should be created within the private subnets
  Create final snapshot should be enabled to recover the database in case someone delete the DB
  The DB username and password should be store on AWS secret manager
  The DB should be accessible only through a bastion 
 
-EKS Control Plane
+Steps for Creating a Database using Aws Secret-Manager to store Secret: 
+
+1. Beside your Database module (in Main.Tf file)
+
+2.Create a Secret-Manager.Tf(file) as follow:
+
+- Resource to create a Secret in Secret-Manager called aws_secretsmanager_secret
+- Resource to create the Secret-Password [(either random passwd,or configure )]
+- Resource to create the Secret-Version[(secretID, secretID string)]
+- Resource to create Aws Kms(KEY MANAGEMENT SERVICE) to manage the secret.
+
+P.S: See Module in the directory to line up files 
+(data.tf, main.tf, providers.tf,secret-manager.tf,tfvars.tf, variables.tf)
+
+
+
+EKS Control Plane(5)
 ------------------
 
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/eks-control-plane
 It should be created in at least 2 public subnets
 
-EKS Node Group
+Steps:
+
+1. Retrieve our Tls(Transport Layer Security) which is in our Acm(Certificate Manager):
+
+
+EKS Node Group(6)
 --------------
 
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/eks-node-group
 It should be created in at least 2 private subnets
 Node should be labeled
-Propore tag should be use for cluster autoscaler
-Remote access should be enabled
+Proper tag should be use for cluster autoscaler (deploy autoscaler)
+Remote access should be enabled (ssh connection via bastion host.)
 
-EKS Namespace
+EKS Namespace(7)
 --------------
 
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/eks-namespaces
 Use loops the create namespace
 Make sure namespace will not be deleted and recreate when we add or remove namespace
-
 EKS Cluster Autoscaler
-----------------------
 
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/cluster-auto-scaler
 It should be created in the cluster-auto-scaler namespace
@@ -208,18 +230,20 @@ Make sure the role have the propore permission to create EC2 instances
 Make sure the cluster should scale up with the delay of 2 minutes only
 Make sure the cluster should scale down with the delay of 2 minutes only
 
-AWS Loadbalance Controller
+AWS Loadbalance Controller (8)
 --------------------------
 
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/aws-load-balancer-controller
-It should be created in the kube-system namespace
+It should be created in the kube-system namespace 
 Make sure the role have the propore permission to create an ALB
-The ALB should be created in the same network with the cluste
+The ALB should be created in the same network with the Cluster
 
-External DNS
+External DNS(9)
 --------------
 
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/external-dns
 It should be created in the namespace call external-dns
 It should have the necessary permissions to create a records set in Route 53
 It should delete the record set immediately when the ingress is deleted in the cluster
+
+
