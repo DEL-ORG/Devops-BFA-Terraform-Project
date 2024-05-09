@@ -1,6 +1,6 @@
-region                  = "us-east-1"
+region                  = "us-east-2"
 cluster_name            = "2560-dev-del"
-eks_version             = 1.24
+eks_version             = 1.29
 endpoint_private_access = false
 endpoint_public_access  = true
 tags = {
