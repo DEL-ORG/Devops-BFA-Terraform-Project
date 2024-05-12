@@ -1,11 +1,11 @@
 aws_region = "us-east-2"
 
-control_plane_name = ""
-# private_subnets = {
-#   us-east-1a = "subnet-096d45c28d9fb4c14"
-#   us-east-1b = "subnet-05f285a35173783b0"
-#   us-east-1c = "subnet-0fe3255479ad7c3a4"
-# }
+control_plane_name = "olivia-k8s"
+private_subnets = {
+  us-east-2a = "subnet-066736fd0d05efd2c"
+  us-east-2b = "subnet-04de5e872483d4c01"
+  us-east-2c = "subnet-085fc7e68c0cff209"
+}
 
 eks_version  = "1.29"
 node_min     = "1"
@@ -18,8 +18,8 @@ green_node_color = "green"
 blue  = "true"
 green = "false"
 
-cluster_name = "dev-revive"
-ec2_ssh_key  = "bastion-key"
+cluster_name = "olivia-k8s"
+ec2_ssh_key  = "capitaine23"
 # deployment_nodegroup      = "blue_green"
 capacity_type             = "ON_DEMAND"
 ami_type                  = "AL2_x86_64"
