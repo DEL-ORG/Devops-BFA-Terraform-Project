@@ -114,6 +114,6 @@ variable "cluster_name" {
   default = "dev-revive"
 }
 
-# variable "private_subnets" {
-#   type = map(string)
-# }
+variable "private_subnets" {
+  type = map(string)
+}
