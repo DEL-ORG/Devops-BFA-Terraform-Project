@@ -42,7 +42,7 @@ resource "aws_eks_node_group" "green-nodes" {
 resource "aws_eks_node_group" "blue-nodes" {
   # depends_on      = [aws_key_pair.node_group_key]
   cluster_name    = var.cluster_name
-  node_group_name = format("%s-%s-blue-node-group", var.tags["environment"], var.tags["project"])
+  node_group_name = "blue-node" #format("%s-%s-blue-node-group", var.tags["environment"], var.tags["project"])
   node_role_arn   = aws_iam_role.nodes.arn
 
   subnet_ids = [
@@ -74,7 +74,8 @@ resource "aws_eks_node_group" "blue-nodes" {
   # }
 
   tags = merge(var.tags, {
-    Name                                                  = format("%s-%s-green-node-group", var.tags["environment"], var.tags["project"])
+    Name = "olivia-blue-node"
+    #Name                                                  = format("%s-%s-blue-node-group", var.tags["environment"], var.tags["project"])
     "k8s.io/cluster-autoscaler/${var.control_plane_name}" = "${var.shared_owned}"
     "k8s.io/cluster-autoscaler/enabled"                   = "${var.enable_cluster_autoscaler}"
     },
