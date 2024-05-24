@@ -1,4 +1,4 @@
-aws_region = "us-east-2"
+aws_region = "us-east-1"
 vpc_id     = "vpc-01409657b9c83a712"
 private_subnets = {
   us-east-2a = "subnet-0910983657060a4a9"
