@@ -28,10 +28,10 @@ variable "aws-ebs-csi-driver-ns" {
 
 variable "control_plane_name" {
   type    = string
-  default = "dev-revive"
+  default = "olivia-k8s"
 }
 
 variable "storage-class-name" {
   type    = string
-  default = "dev-revive"
+  default = "olivia-k8s"
 }
