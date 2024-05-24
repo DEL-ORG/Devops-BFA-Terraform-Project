@@ -1,10 +1,10 @@
-aws_region = "us-east-2"
+aws_region = "us-east-1"
 
 control_plane_name = "olivia-k8s"
 private_subnets = {
-  us-east-2a = "subnet-066736fd0d05efd2c"
-  us-east-2b = "subnet-04de5e872483d4c01"
-  us-east-2c = "subnet-085fc7e68c0cff209"
+  us-east-1a = "subnet-066736fd0d05efd2c"
+  us-east-1b = "subnet-04de5e872483d4c01"
+  us-east-1c = "subnet-085fc7e68c0cff209"
 }
 
 eks_version  = "1.29"
