@@ -70,8 +70,33 @@ Vpc Steps:
 VPC CREATION GUIDANCE ON THE CONSOLE & USING TERRAFORM (complete-course-del)
  
  
+ ACM (3)
+ ----- 
+ https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/acm
+ Purchase a domain name on route 53 (Console)
+ Create a wildcard domain (using terraform)
 
-Bastion Host (module) (3)
+ Steps:
+
+ 1.Purchase a domain name on Route 53 [[Console]]:
+
+Sign in to the AWS Management Console and open the Route 53 console.
+In the navigation pane, choose "Registered domains."
+Choose "Register domain."
+Follow the instructions to search for and purchase your domain name.
+Complete the registration process by providing necessary information and payment details.
+
+
+2. Use Terraform to Create your ACM[[ Amazon Certificate Manager]]
+
+Write Terraform Configuration:( aws_acm_certificate)
+
+Create a file named main.tf (or any suitable name) within your Terraform directory.
+Define the Aws Provider,   Aws_acm_certificate and Route 53 Record resources configurations 
+in this file.
+
+
+Bastion Host (module) (4)
 ---------------------
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/bastion-host
 
@@ -141,32 +166,8 @@ reproducible machine images, streamlining the deployment process and improving i
 management.
 
 
- ACM (4)
- ----- 
- https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/acm
- Purchase a domain name on route 53 (Console)
- Create a wildcard domain (using terraform)
 
- Steps:
-
- 1.Purchase a domain name on Route 53 [[Console]]:
-
-Sign in to the AWS Management Console and open the Route 53 console.
-In the navigation pane, choose "Registered domains."
-Choose "Register domain."
-Follow the instructions to search for and purchase your domain name.
-Complete the registration process by providing necessary information and payment details.
-
-
-2. Use Terraform to Create your ACM[[ Amazon Certificate Manager]]
-
-Write Terraform Configuration:( aws_acm_certificate)
-
-Create a file named main.tf (or any suitable name) within your Terraform directory.
-Define the Aws Provider,   Aws_acm_certificate and Route 53 Record resources configurations 
-in this file.
-
- Database (module)
+ Database (module)(5)
  ------------------
  https://github.com/devopstia/s4/tree/master/terroform/session04/modules/databases/postgres
  https://www.youtube.com/watch?v=qi5dnEM9mGY (secret-manager secret& kms)
@@ -193,7 +194,7 @@ P.S: See Module in the directory to line up files
 
 
 
-EKS Control Plane(5)
+EKS Control Plane(6)
 ------------------
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/eks-control-plane
 It should be created in at least 2 public subnets
@@ -208,7 +209,7 @@ Steps:
     worker node version.
 
 
-EKS Node Group(6)
+EKS Node Group(7)
 --------------
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/eks-node-group
 It should be created in at least 2 private subnets
@@ -217,21 +218,21 @@ Proper tag should be use for cluster autoscaler (deploy autoscaler)
 Remote access should be enabled (ssh connection via bastion host.)
 
 
-EKS Cluster Authentication
+EKS Cluster Authentication(8)
 --------------------------
 This module simply allows authentication in the cluster, and it also update the kubeconfig file
 
 
 
 
-EKS Namespace(7)
+EKS Namespace(9)
 --------------
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/eks-namespaces
 Use loops the create namespace
 Make sure namespace will not be deleted and recreate when we add or remove namespace
 
 
-EKS Cluster Autoscaler
+EKS Cluster Autoscaler(10)
 ----------------------
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/cluster-auto-scaler
 It should be created in the cluster-auto-scaler namespace
@@ -239,14 +240,14 @@ Make sure the role have the propore permission to create EC2 instances
 Make sure the cluster should scale up with the delay of 2 minutes only
 Make sure the cluster should scale down with the delay of 2 minutes only
 
-AWS Loadbalance Controller (8)
+AWS Loadbalance Controller (11)
 --------------------------
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/aws-load-balancer-controller
 It should be created in the kube-system namespace 
 Make sure the role have the propore permission to create an ALB
 The ALB should be created in the same network with the Cluster
 
-External DNS(9)
+External DNS(12)
 --------------
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/external-dns
 It should be created in the namespace call external-dns
