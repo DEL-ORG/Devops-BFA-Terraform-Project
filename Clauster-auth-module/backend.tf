@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
     bucket         = "2923-devops-bfa-final-tf-state"
-    key            = "aws-terraform/Eks-worker-node/terraform.tfstate"
-    region         = "us-east-2"
+    key            = "aws-terraform/Clauster-auth/terraform.tfstate"
+    region         = "us-east-1"
     dynamodb_table = "2923-devops-bfa-final-tf-state-lock"
   }
 }
