@@ -1,8 +1,8 @@
 resource "aws_instance" "bastion_host" {
-  ami                    = "ami-03cfdd504fc611459"
+  ami                    = "ami-0f15b007c8270e1f6"
   instance_type          = "t2.xlarge"
   subnet_id              = "subnet-025a8b87cffa50b8f"
-  key_name               = "chriskeypair"
+  key_name               = "olivia23"
   vpc_security_group_ids = ["${aws_security_group.bastion.id}"]
 
   tags = {
