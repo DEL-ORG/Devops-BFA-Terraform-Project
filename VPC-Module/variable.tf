@@ -1,6 +1,6 @@
 variable "aws_region" {
   type = string
-  default = "us-east-2"
+  default = "us-east-1"
 }
 
 variable "common_tags" {
@@ -52,9 +52,9 @@ variable "public-subnet-cidr" {
 variable "aws_availability_zones" {
   type = list(any)
   default = [
-    "us-east-2a",
-    "us-east-2b",
-    "us-east-2c",
+    "us-east-1a",
+    "us-east-1b",
+    "us-east-1c",
   ]
 }
 
