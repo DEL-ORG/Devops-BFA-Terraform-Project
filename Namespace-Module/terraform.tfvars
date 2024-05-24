@@ -1,4 +1,4 @@
-control_plane_name = "dev-revive"
+control_plane_name = "olivia-k8s"
 region         = "us-east-1"
 name_spaces = [
   "aws-ebs-csi-driver",
@@ -18,11 +18,11 @@ name_spaces = [
 ]
 
 tags = {
-  "id"             = "2024"
-    "owner"          = "Devops Easy Learning"
-    "teams"          = "Phase-10-1"
-    "environment"    = "dev"
-    "project"        = "revive"
-    "create_by"      = "EK-TECH Solutions"
-    "cloud_provider" = "aws"
+  "id"             = "2923"
+  "owner"          = "S5edouard"
+  "teams"          = "devops-BFA"
+  "environment"    = "devops-bfa"
+  "project"        = "final"
+  "create_by"      = "Terraform"
+  "cloud_provider" = "aws"
 }
