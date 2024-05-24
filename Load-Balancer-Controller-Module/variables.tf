@@ -28,6 +28,6 @@ variable "aws-load-balancer-controller-ns" {
 
 variable "control_plane_name" {
   type    = string
-  default = "dev-revive"
+  default = "olivia-k8s"
 }
 
