@@ -2,8 +2,8 @@
 region              = "us-east-1"
 aws-ebs-csi-driver-sa   = "aws-ebs-csi-driver-sa"
 aws-ebs-csi-driver-ns   = "aws-ebs-csi-driver"
-# control_plane_name      = "dev-revive"
-# storage-class-name      = "dev-revive"
+# control_plane_name      = "olivia-k8s"
+# storage-class-name      = "olivia-k8s"
 tags = {
   "id"             = "2923"
   "owner"          = "S5edouard"
