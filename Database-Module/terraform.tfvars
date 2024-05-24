@@ -29,11 +29,11 @@ postgres = {
 }
 
 common_tags = {
-  "id"             = "2560"
-  "owner"          = "DevOps Easy Learning"
-  "teams"          = "bfadevops"
-  "environment"    = "dev"
-  "project"        = "del"
+  "id"             = "2923"
+  "owner"          = "S5edouard"
+  "teams"          = "devops-BFA"
+  "environment"    = "devops-bfa"
+  "project"        = "final"
   "create_by"      = "Terraform"
   "cloud_provider" = "aws"
 }

@@ -22,5 +22,5 @@ variable "region" {
 
 variable "control_plane_name" {
   type    = string
-  default = "dev-revive"
+  default = "olivia-k8s"
 }
