@@ -216,6 +216,14 @@ Node should be labeled
 Proper tag should be use for cluster autoscaler (deploy autoscaler)
 Remote access should be enabled (ssh connection via bastion host.)
 
+
+EKS Cluster Authentication
+--------------------------
+This module simply allows authentication in the cluster, and it also update the kubeconfig file
+
+
+
+
 EKS Namespace(7)
 --------------
 https://github.com/devopstia/terraform-course-del/tree/main/aws-terraform/modules/eks-namespaces

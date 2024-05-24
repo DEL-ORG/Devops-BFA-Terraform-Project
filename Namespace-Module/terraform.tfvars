@@ -14,7 +14,7 @@ name_spaces = [
   "security",
   "jenkins",
   "calico",
-  "revive",
+  "olivia-k8s",
 ]
 
 tags = {
