@@ -16,8 +16,8 @@ variable "subject_alternative_names" {
 variable "tags" {
   type = map(any)
   default = {
-    "id"             = "2923"
-    "owner"          = "S5edouard"
+    "id"             = "2108"
+    "owner"          = "S5KISITO"
     "teams"          = "usa-devops"
     "environment"    = "devops-bfa"
     "project"        = "final"
