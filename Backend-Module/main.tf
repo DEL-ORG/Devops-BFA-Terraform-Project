@@ -1,5 +1,5 @@
 resource "aws_iam_role" "replication" {
-  provider = "aws.state"
+  provider = aws.state
   name     = format("%s-%s-%s-s3-replication-role", var.common_tags["id"], var.common_tags["environment"], var.common_tags["project"])
 
   assume_role_policy = <<POLICY
@@ -21,7 +21,7 @@ POLICY
 }
 
 resource "aws_iam_policy" "replication" {
-  provider = "aws.state"
+  provider = aws.state
   name     = format("%s-%s-%s-s3-replication-policy", var.common_tags["id"], var.common_tags["environment"], var.common_tags["project"])
 
   policy = <<POLICY
@@ -62,14 +62,14 @@ POLICY
 }
 
 resource "aws_iam_policy_attachment" "replication" {
-  provider   = "aws.state"
+  provider = aws.state
   name       = format("%s-%s-%s-s3-replication-policy-attachment", var.common_tags["id"], var.common_tags["environment"], var.common_tags["project"])
   roles      = ["${aws_iam_role.replication.name}"]
   policy_arn = aws_iam_policy.replication.arn
 }
 
 resource "aws_s3_bucket" "state" {
-  provider = "aws.state"
+  provider = aws.state
   bucket   = format("%s-%s-%s-tf-state", var.common_tags["id"], var.common_tags["environment"], var.common_tags["project"])
   acl      = "private"
   versioning {
@@ -118,7 +118,7 @@ resource "aws_s3_bucket_versioning" "versioning_example1" {
 }
 
 resource "aws_dynamodb_table" "tf-state-lock" {
-  provider       = "aws.state"
+  provider = aws.state
   name           = format("%s-%s-%s-tf-state-lock", var.common_tags["id"], var.common_tags["environment"], var.common_tags["project"])
   hash_key       = "LockID"
   read_capacity  = 20
