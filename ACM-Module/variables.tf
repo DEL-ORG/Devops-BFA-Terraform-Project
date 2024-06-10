@@ -5,12 +5,12 @@ variable "aws_region" {
 
 variable "domain_name" {
   type    = string
-  default = "bfadevops.com"
+  default = "devopsbfa.net"
 }
 
 variable "subject_alternative_names" {
   type    = string
-  default = "bfadevops.com"
+  default = "devopsbfa.net"
 }
 
 variable "tags" {
