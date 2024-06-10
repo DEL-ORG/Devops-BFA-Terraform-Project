@@ -12,9 +12,9 @@ public-subnet-cidr = [
   "10.10.6.0/24",
 ]
 aws_availability_zones = [
-  "us-east-2a",
-  "us-east-2b",
-  "us-east-2c",
+  "us-east-1a",
+  "us-east-1b",
+  "us-east-1c",
 ]
 instance_tenancy                 = "default"
 enable_dns_support               = true
