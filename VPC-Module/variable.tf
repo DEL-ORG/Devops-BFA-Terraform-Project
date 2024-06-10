@@ -1,20 +1,22 @@
 variable "aws_region" {
-  type = string
+  type    = string
   default = "us-east-1"
 }
+
 
 variable "common_tags" {
   type = map(any)
   default = {
-    "id"             = "2923"
-    "owner"          = "S5edouard"
-    "teams"          = "devops-BFA"
+    "id"             = "2108"
+    "owner"          = "S5KISITO"
+    "teams"          = "usa-devops"
     "environment"    = "devops-bfa"
     "project"        = "final"
     "create_by"      = "Terraform"
     "cloud_provider" = "aws"
   }
 }
+
 
 ## VPC
 variable "cidr_block" {

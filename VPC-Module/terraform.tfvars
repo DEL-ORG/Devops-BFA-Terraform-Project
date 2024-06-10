@@ -24,9 +24,9 @@ assign_generated_ipv6_cidr_block = false
 cluster_name = "2923-project-cluster"
 
 common_tags = {
-  "id"             = "2923"
-  "owner"          = "S5edouard"
-  "teams"          = "devops-BFA"
+  "id"             = "2108"
+  "owner"          = "S5KISITO"
+  "teams"          = "usa-devops"
   "environment"    = "devops-bfa"
   "project"        = "final"
   "create_by"      = "Terraform"
