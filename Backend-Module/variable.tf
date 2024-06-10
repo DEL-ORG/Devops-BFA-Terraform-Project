@@ -11,9 +11,9 @@ variable "aws_region_backup" {
 variable "common_tags" {
   type = map(any)
   default = {
-    "id"             = "2923"
-    "owner"          = "S5edouard"
-    "teams"          = "devops-bfa"
+    "id"             = "2108"
+    "owner"          = "S5KISITO"
+    "teams"          = "usa-devops"
     "environment"    = "devops-bfa"
     "project"        = "final"
     "create_by"      = "Terraform"
