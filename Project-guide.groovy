@@ -131,8 +131,12 @@ official website or use package managers like Homebrew (for macOS/Linux) or Choc
 
 .Define Builders: In the configuration file, define one or more builders. Builders 
 are responsible for creating machines and generating images from them. You specify 
-the type of builder (e.g., AWS, Azure, VirtualBox, Docker), the base image or template to use,
+the type of builder (e.g., AWS, Azure, VirtualBox, Docker), the base image(see below) or template to use,
  and configuration options such as instance size, region, or virtualization settings.
+  + For the image: 1-G0 to AWS 
+                   2-EC2 console 
+                   3-select AMI 
+                   4-then using the dropdown arrow select plublic images and choose the image wanted for the build.
 
 .Configure Provisioners: Specify provisioners in the configuration file to install and 
 configure software on the machine before the image is captured. Packer supports various
