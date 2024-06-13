@@ -7,13 +7,7 @@ variable "tags" {
   type        = map(string)
   description = "Common tags to be applied to resources"
   default = {
-  "id"             = "2923"
-  "owner"          = "S5edouard"
-  "teams"          = "devops-BFA"
-  "environment"    = "devops-bfa"
-  "project"        = "final"
-  "create_by"      = "Terraform"
-  "cloud_provider" = "aws"
+
   }
 }
 
@@ -116,4 +110,13 @@ variable "cluster_name" {
 
 variable "private_subnets" {
   type = map(string)
+  default = {
+    "id"             = "2108"
+    "owner"          = "S5KISITO"
+    "teams"          = "usa-devops"
+    "environment"    = "devops-bfa"
+    "project"        = "final"
+    "create_by"      = "Terraform"
+    "cloud_provider" = "aws"
+  }
 }
